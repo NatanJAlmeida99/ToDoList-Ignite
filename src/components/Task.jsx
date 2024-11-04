@@ -1,4 +1,5 @@
 import styles from './Task.module.css'
+import { VoidTask } from './VoidTask'
 
 export function Task() {
     return (
@@ -14,6 +15,11 @@ export function Task() {
                     <span>2 de 10</span>
                 </div>
             </header>
+
+            <div className={styles.list}> 
+                <VoidTask />
+                <VoidTask />
+            </div>
         </section>
     )
 }
