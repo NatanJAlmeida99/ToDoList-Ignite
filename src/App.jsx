@@ -4,14 +4,12 @@ import { Task } from "./components/Task";
 
 function App() {
     const [tasks, setTasks] = useState([
-        { id: 1, text: 'Estudar React', completed: false },
-        { id: 2, text: 'Fazer exercícios', completed: true },
-        // Adicione mais tarefas aqui se quiser
+        
     ]);
 
     const addTask = (newTaskText) => {
         const newTask = {
-            id: tasks.length + 1, // Gera um ID único
+            id: tasks.length + 1, 
             text: newTaskText,
             completed: false,
         };
