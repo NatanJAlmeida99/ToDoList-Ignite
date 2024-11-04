@@ -1,20 +1,21 @@
-import { Trash } from 'phosphor-react'
-import sytles from './VoidTask.module.css'
+import { Trash } from 'phosphor-react';
+import styles from './VoidTask.module.css';
 
-export function VoidTask() {
+export function VoidTask({ task, onDelete, onToggleComplete }) {
     return (
-        <div className={sytles.voidTask}>
-            <button className={sytles.check}>
-                <div></div>
+        <div className={styles.voidTask}>
+            <button 
+                className={styles.check} 
+                onClick={() => onToggleComplete(task.id)}
+            >
+                <div className={task.completed ? styles.checked : ''}></div>
             </button>
 
-            <p>
-                Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.
-            </p>
+            <p className={task.completed ? styles.completed : ''}>{task.text}</p>
 
-            <button className={sytles.trash}>
+            <button className={styles.trash} onClick={() => onDelete(task.id)}>
                 <Trash size={20}/>
             </button>
         </div>
-    )
+    );
 }
